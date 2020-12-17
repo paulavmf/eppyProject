@@ -19,6 +19,9 @@ def idfobjbypattern(idf,pattern):
 def fieldsetter(epbunch,fieldname, newvalue):
     epbunch.__setattr__(fieldname, newvalue)
 
+def fieldgetter(epbunch,fieldname):
+    return epbunch.__getattr__(fieldname)
+
 
 def get_instance(idf, ObjectName, NameToStudy):
     '''
@@ -51,19 +54,17 @@ def get_outputs(fname, variableName = None, scheduleName = None):
     return data
 
 def epobject_to_df(epobj):
-    # todo revisar que funciona para todos los objetos
     'Convert an ep object in a pandas dataframe for a netter visualization'
-    df = pd.DataFrame({'fields': epobj[0].fieldnames})
+    df = pd.DataFrame({'fields': epobj[0].objls})
     col = 0
     for o in epobj:
-        col =col +1
-        df[str(col)] = o.obj
+        col += 1
+        df[str(col)] = [fieldgetter(o,f) for f in o.objls]
     df = df.set_index('fields')
     return df
 
 def notnullobj(idf):
     l = []
-    # TODO no funciona en ypynb
     for i in idf.idfobjects:
         if len(idf.idfobjects[i])>0:
             l.append(i)
