@@ -69,3 +69,37 @@ def notnullobj(idf):
         if len(idf.idfobjects[i])>0:
             l.append(i)
     return l
+
+
+def eso_to_ts(outputfile):
+    df = pd.read_csv(outputfile)
+    if sum(df['Date/Time'].duplicated())>0:
+        raise Exception('dates are duplicated. Impossible to convert to Time Series data frame')
+    else:
+        new = df['Date/Time'].str.split('  ', n=1, expand=True)
+        new[0] = new[0].str.replace('/', '-') + '-00'
+        new[1] = new[1].str.replace('24',
+                                    '00')  # TODO esto  tengo que hacerlo por regex si mis simulaciones son más cortas que una hora (osea, si por lo que sea tengo 24 minutos)
+        df['Date/Time'] = new[0].str.cat(new[1], sep=" ")
+        df['Date/Time'] = df['Date/Time'].str.strip()
+        df = df.set_index('Date/Time')
+        df.index = pd.to_datetime(df.index, format = '%m-%d-%y %H:%M:%S')
+        return df
+
+def get_outputs(file, variableName, scheduleName):
+    # TODO hacerlo para una lista de variables
+    '''
+    Create a dataframe from eplusout.eso with the output variable to study
+    '''
+    os.system(file + '/ReadVarsESO')
+    data = pd.read_csv(file+ '/eplusout.csv')
+    data = data.set_index('Date/Time')
+    pattern = re.compile(variableName)
+    for i in data.columns:
+        if pattern.search(i): # me dará como resultado todas las thermas zones..
+            col = i
+    if not col:
+        raise Exception(variableName + " ")
+    data = data[col].to_frame()
+    data.rename(columns = {col : ':'.join([col, scheduleName])}, inplace = True)
+    return data

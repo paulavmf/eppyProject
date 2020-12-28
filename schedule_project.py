@@ -21,8 +21,8 @@ def get_outputs(variableName, scheduleName):
     '''
     Create a dataframe from eplusout.eso with the output variable to study
     '''
-    os.startfile("output\ReadVarsESO.exe")
-    data = pd.read_csv('output\eplusout.csv')
+    os.system('/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/output/schedule/ReadVarsESO')
+    data = pd.read_csv('/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/output/schedule/eplusout.csv')
     data = data.set_index('Date/Time')
     pattern = re.compile(variableName)
     for i in data.columns:
@@ -47,7 +47,7 @@ def get_schedule_instance(idf, scheduleObjectName, instanceNameToStudy):
 # después de esto tengo que bajar al nivel de schedule day.
 
 def main():
-    idffile = 'input/1ZoneUncontrolled_win_1.idf'
+    idffile = 'input/demo_simple.idf'
     iddfile = '/usr/local/EnergyPlus-9-4-0/Energy+.idd'
     epwfile = '/usr/local/EnergyPlus-9-4-0/WeatherData/USA_CO_Golden-NREL.724666_TMY3.epw'
     idf = initialization(idffile, iddfile,epwfile)
@@ -65,9 +65,11 @@ def main():
     # lista de Schedules que voy a usar
     scheduleDayInterval_list =  [obj.Name for obj in idf.idfobjects['SCHEDULE:DAY:INTERVAL']][:2]
     # remove all outputs TENGO QUE USAR LA FUNCIÓN FILTER:
+    fieldsetter(idf.idfobjects['SIMULATIONCONTROL'][0], 'Run_Simulation_for_Sizing_Periods', 'No')
+    fieldsetter(idf.idfobjects['SIMULATIONCONTROL'][0], 'Run_Simulation_for_Weather_File_Run_Periods', 'Yes')
 
     for var in idf.idfobjects['Output:Variable']:
-        if var.Variable_Name != 'Zone People Total Heating Energy':
+        if var.Variable_Name != 'People Radiant Heating Rate':
             idf.removeidfobject(var)
     # rename fields of interest TENGO QUE USAR LA FUNCIÓN FILTER
     for sch in scheduleDayInterval_list:
@@ -76,9 +78,9 @@ def main():
                 fieldsetter(scheduleWeekDaily_instance,field, sch)
         idf.run(output_directory = 'output/schedule/')
         if not 'output' in locals():
-            output = get_outputs('Zone People Total Heating Energy', sch)
+            output = get_outputs('People Radiant Heating Rate', sch)
         else:
-            tmp = get_outputs('Zone People Total Heating Energy',sch)
+            tmp = get_outputs('People Radiant Heating Rate',sch)
             output = pd.concat([output, tmp ], axis = 1)
     output.to_excel('output/output.xlsx')
 
