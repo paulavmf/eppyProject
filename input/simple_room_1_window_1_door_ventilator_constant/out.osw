@@ -1,0 +1,21 @@
+{
+   "completed_at" : "20210112T200831Z",
+   "completed_status" : "Fail",
+   "created_at" : "20210112T195042Z",
+   "current_step" : 0,
+   "eplusout_err" : "Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2021.01.12 20:08,\n   ** Severe  ** <root>[SetpointManager:SingleZone:Reheat][Setpoint Manager Single Zone Reheat 1] - Missing required property 'control_zone_name'.\n   ** Severe  ** <root>[SetpointManager:SingleZone:Reheat][Setpoint Manager Single Zone Reheat 1] - Missing required property 'zone_inlet_node_name'.\n   ** Severe  ** <root>[SetpointManager:SingleZone:Reheat][Setpoint Manager Single Zone Reheat 1] - Missing required property 'zone_node_name'.\n   **  Fatal  ** Errors occurred on processing input file. Preceding condition(s) cause termination.\n   ...Summary of Errors that led to program termination:\n   ..... Reference severe error count=3\n   ..... Last severe error=<root>[SetpointManager:SingleZone:Reheat][Setpoint Manager Single Zone Reheat 1] - Missing required property 'zone_node_name'.\n   ************* Warning:  Node connection errors not checked - most system input has not been read (see previous warning).\n   ************* Fatal error -- final processing.  Program exited before simulations began.  See previous error messages.\n   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.\n   ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.\n   ************* EnergyPlus Terminated--Fatal Error Detected. 0 Warning; 3 Severe Errors; Elapsed Time=00hr 00min  0.33sec\n",
+   "file_paths" : 
+   [
+      "/tmp/osmodel-1610482012-1/resources/generated_files",
+      "./files",
+      "./weather",
+      "../../files",
+      "../../weather",
+      "./"
+   ],
+   "hash" : "82ADE07D",
+   "seed_file" : "../simple_room_1_window_1_door_ventilator_constant.osm",
+   "started_at" : "20210112T200831Z",
+   "steps" : [],
+   "updated_at" : "20210112T200831Z"
+}

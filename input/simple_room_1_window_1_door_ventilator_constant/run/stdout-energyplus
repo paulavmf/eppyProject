@@ -1,0 +1,5 @@
+EnergyPlus Starting
+EnergyPlus, Version 9.4.0-998c4b761e, YMD=2021.01.12 20:08
+**FATAL:Errors occurred on processing input file. Preceding condition(s) cause termination.
+EnergyPlus Run Time=00hr 00min  0.33sec
+Program terminated: EnergyPlus Terminated--Error(s) Detected.
