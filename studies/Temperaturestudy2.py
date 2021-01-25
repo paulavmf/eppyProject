@@ -16,14 +16,19 @@ def main():
         for o in idf.idfobjects[obj]:
             idf.removeidfobject(o)
     vars_name = ['Site Outdoor Air Drybulb Temperature','Zone Air Temperature']
-    # TODO dice que el archivo no existe' muy raro
+    # TODO hacer esto general
+    idf.removeidfobject(idf.idfobjects['OUTPUT:VARIABLE'][0])
+    for n in range(len(vars_name)):
+        idf.newidfobject('OUTPUT:VARIABLE')
+        idf.idfobjects['OUTPUT:VARIABLE'][n].Variable_Name = vars_name[n]
     newdir = os.path.basename(__file__).replace('.py','')
     try:
         os.mkdir(newdir)
     except FileExistsError:
         print("Directory already exists")
     idf.run(output_directory=os.path.join(os.getcwd(),newdir))
-    copyfile('ReadVarsESO.exe', newdir)
+    # TODO esto no funciona, coge el directorio entero o desde el proyecto???
+    copyfile('ReadVarsESO', newdir)
     os.system('/'.join(newdir,'ReadVarESO'))
 
 

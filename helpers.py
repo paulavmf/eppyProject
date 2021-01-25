@@ -71,20 +71,23 @@ def notnullobj(idf):
     return l
 
 
-def eso_to_ts(outputfile):
+def eso_to_ts(outputfile, drop_duplicateds = False):
     df = pd.read_csv(outputfile)
+    if drop_duplicateds:
+        df = df.drop_duplicates()
+        # TODO ENSEÑAR LOS DUPLICADOS O ALGO ASÍ O HACER ESTO CONTANDO LOS VALORES QUE DEBERÍA TENER
     if sum(df['Date/Time'].duplicated())>0:
         raise Exception('dates are duplicated. Impossible to convert to Time Series data frame')
-    else:
-        new = df['Date/Time'].str.split('  ', n=1, expand=True)
-        new[0] = new[0].str.replace('/', '-') + '-00'
-        new[1] = new[1].str.replace('24',
-                                    '00')  # TODO esto  tengo que hacerlo por regex si mis simulaciones son más cortas que una hora (osea, si por lo que sea tengo 24 minutos)
-        df['Date/Time'] = new[0].str.cat(new[1], sep=" ")
-        df['Date/Time'] = df['Date/Time'].str.strip()
-        df = df.set_index('Date/Time')
-        df.index = pd.to_datetime(df.index, format = '%m-%d-%y %H:%M:%S')
-        return df
+    new = df['Date/Time'].str.split('  ', n=1, expand=True)
+    new[0] = new[0].str.replace('/', '-') + '-00'
+    new[1] = new[1].str.replace('24',
+                                '00')  # TODO esto  tengo que hacerlo por regex si mis simulaciones son más cortas
+    # que una hora (osea, si por lo que sea tengo 24 minutos)
+    df['Date/Time'] = new[0].str.cat(new[1], sep=" ")
+    df['Date/Time'] = df['Date/Time'].str.strip()
+    df = df.set_index('Date/Time')
+    df.index = pd.to_datetime(df.index, format = '%m-%d-%y %H:%M:%S')
+    return df
 
 def get_outputs(file, variableName, scheduleName):
     # TODO hacerlo para una lista de variables
