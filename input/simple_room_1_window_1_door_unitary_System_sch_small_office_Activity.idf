@@ -3834,11 +3834,109 @@ ZoneInfiltration:DesignFlowRate,
     ;                        !- Velocity Squared Term Coefficient
 
 
+!-   ===========  ALL OBJECTS IN CLASS: HVACTEMPLATE:THERMOSTAT ===========
+
+HVACTemplate:Thermostat,
+    thermostat 1,            !- Name
+    Small Office Activity,   !- Heating Setpoint Schedule Name
+    15,                      !- Constant Heating Setpoint {C}
+    ,                        !- Cooling Setpoint Schedule Name
+    25;                      !- Constant Cooling Setpoint {C}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: HVACTEMPLATE:ZONE:UNITARY ===========
+
+HVACTemplate:Zone:Unitary,
+    Thermal Zone 1,          !- Zone Name
+    system 1,                !- Template Unitary System Name
+    thermostat 1,            !- Template Thermostat Name
+    autosize,                !- Supply Air Maximum Flow Rate {m3/s}
+    ,                        !- Zone Heating Sizing Factor
+    ,                        !- Zone Cooling Sizing Factor
+    Flow/Person,             !- Outdoor Air Method
+    0.00944,                 !- Outdoor Air Flow Rate per Person {m3/s}
+    ,                        !- Outdoor Air Flow Rate per Zone Floor Area {m3/s-m2}
+    ,                        !- Outdoor Air Flow Rate per Zone {m3/s}
+    ,                        !- Supply Plenum Name
+    ,                        !- Return Plenum Name
+    None,                    !- Baseboard Heating Type
+    ,                        !- Baseboard Heating Availability Schedule Name
+    autosize,                !- Baseboard Heating Capacity {W}
+    SystemSupplyAirTemperature,  !- Zone Cooling Design Supply Air Temperature Input Method
+    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+    SystemSupplyAirTemperature,  !- Zone Heating Design Supply Air Temperature Input Method
+    50,                      !- Zone Heating Design Supply Air Temperature {C}
+    30;                      !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+
+
+!-   ===========  ALL OBJECTS IN CLASS: HVACTEMPLATE:SYSTEM:UNITARY ===========
+
+HVACTemplate:System:Unitary,
+    system 1,                !- Name
+    Always On Continuous,    !- System Availability Schedule Name
+    Thermal Zone 1,          !- Control Zone or Thermostat Location Name
+    autosize,                !- Supply Fan Maximum Flow Rate {m3/s}
+    ,                        !- Supply Fan Operating Mode Schedule Name
+    0.7,                     !- Supply Fan Total Efficiency
+    600,                     !- Supply Fan Delta Pressure {Pa}
+    0.9,                     !- Supply Fan Motor Efficiency
+    1,                       !- Supply Fan Motor in Air Stream Fraction
+    SingleSpeedDX,           !- Cooling Coil Type
+    ,                        !- Cooling Coil Availability Schedule Name
+    12.8,                    !- Cooling Design Supply Air Temperature {C}
+    autosize,                !- Cooling Coil Gross Rated Total Capacity {W}
+    autosize,                !- Cooling Coil Gross Rated Sensible Heat Ratio
+    3,                       !- Cooling Coil Gross Rated COP {W/W}
+    Electric,                !- Heating Coil Type
+    ,                        !- Heating Coil Availability Schedule Name
+    50,                      !- Heating Design Supply Air Temperature {C}
+    autosize,                !- Heating Coil Capacity {W}
+    0.8,                     !- Gas Heating Coil Efficiency
+    ,                        !- Gas Heating Coil Parasitic Electric Load {W}
+    autosize,                !- Maximum Outdoor Air Flow Rate {m3/s}
+    autosize,                !- Minimum Outdoor Air Flow Rate {m3/s}
+    ,                        !- Minimum Outdoor Air Schedule Name
+    NoEconomizer,            !- Economizer Type
+    NoLockout,               !- Economizer Lockout
+    ,                        !- Economizer Upper Temperature Limit {C}
+    ,                        !- Economizer Lower Temperature Limit {C}
+    ,                        !- Economizer Upper Enthalpy Limit {J/kg}
+    ,                        !- Economizer Maximum Limit Dewpoint Temperature {C}
+    ,                        !- Supply Plenum Name
+    ,                        !- Return Plenum Name
+    BlowThrough,             !- Supply Fan Placement
+    StayOff,                 !- Night Cycle Control
+    ,                        !- Night Cycle Control Zone Name
+    None,                    !- Heat Recovery Type
+    0.7,                     !- Sensible Heat Recovery Effectiveness
+    0.65,                    !- Latent Heat Recovery Effectiveness
+    None,                    !- Dehumidification Control Type
+    60,                      !- Dehumidification Setpoint {percent}
+    None,                    !- Humidifier Type
+    ,                        !- Humidifier Availability Schedule Name
+    0.000001,                !- Humidifier Rated Capacity {m3/s}
+    autosize,                !- Humidifier Rated Electric Power {W}
+    ,                        !- Humidifier Control Zone Name
+    30,                      !- Humidifier Setpoint {percent}
+    No,                      !- Return Fan
+    0.7,                     !- Return Fan Total Efficiency
+    500,                     !- Return Fan Delta Pressure {Pa}
+    0.9,                     !- Return Fan Motor Efficiency
+    1;                       !- Return Fan Motor in Air Stream Fraction
+
+
 !-   ===========  ALL OBJECTS IN CLASS: SIZING:PARAMETERS ===========
 
 Sizing:Parameters,
     1.25,                    !- Heating Sizing Factor
     1.15;                    !- Cooling Sizing Factor
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTDOORAIR:NODE ===========
+
+OutdoorAir:Node,
+    Model Outdoor Air Node;  !- Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: LIFECYCLECOST:PARAMETERS ===========
@@ -3857,6 +3955,15 @@ LifeCycleCost:Parameters,
     25,                      !- Length of Study Period in Years
     ,                        !- Tax rate
     None;                    !- Depreciation Method
+
+
+!-   ===========  ALL OBJECTS IN CLASS: LIFECYCLECOST:NONRECURRINGCOST ===========
+
+LifeCycleCost:NonrecurringCost,
+    Default Cost,            !- Name
+    Construction,            !- Category
+    0,                       !- Cost
+    ServicePeriod;           !- Start of Costs
 
 
 !-   ===========  ALL OBJECTS IN CLASS: LIFECYCLECOST:USEPRICEESCALATION ===========
