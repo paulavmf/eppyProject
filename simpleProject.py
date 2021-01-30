@@ -1,4 +1,4 @@
-from helpers import *
+from helpers.idf_helpers import *
 from eppy.modeleditor import IDF
 from eppy import idf_helpers
 from eppy.bunch_subclass import EpBunch

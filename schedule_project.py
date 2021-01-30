@@ -9,7 +9,7 @@ from eppy import idf_helpers
 from eppy.bunch_subclass import EpBunch
 import pandas as pd
 import os
-from helpers import fieldsetter, initialization
+from helpers.idf_helpers import fieldsetter, initialization
 import re
 
 # TODO HACER UN PROGRAMA GENÉRICO PARA CAMBIAR LO SCHEDULES DE ALGO ESPECÍFICO...

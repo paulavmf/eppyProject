@@ -1,6 +1,4 @@
-Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2021.01.27 19:05,
-   ** Warning ** Version: in IDF="9.3" not the same as expected="9.4"
-   ** Warning ** Version: in IDF="9.3" not the same as expected="9.4"
+Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2021.01.30 18:29,
    ** Warning ** ManageSizing: For a zone sizing run, there must be at least 1 Sizing:Zone input object. SimulationControl Zone Sizing option ignored.
    ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS OFF DISCRETE", Blank Schedule Type Limits Name input -- will not be validated.
    ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS ON CONTINUOUS", Blank Schedule Type Limits Name input -- will not be validated.
@@ -55,4 +53,4 @@ Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2021.01.27 19:05,
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 1 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 15 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  2.04sec
+   ************* EnergyPlus Completed Successfully-- 13 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  2.02sec
