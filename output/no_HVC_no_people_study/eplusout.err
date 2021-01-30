@@ -1,11 +1,11 @@
-Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2020.12.30 20:11,
+Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2021.01.27 18:26,
    ** Warning ** CheckEnvironmentSpecifications: SimulationControl specified doing design day simulations, but no design environments specified.
    **   ~~~   ** ...No design environment results produced. For these results, add appropriate SizingPeriod:* objects for your simulation.
    ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
    **   ~~~   ** ..Location object=SITE 1
-   **   ~~~   ** ..Weather File Location=Denver Centennial  Golden   Nr CO USA TMY3 WMO#=724666
-   **   ~~~   ** ..due to location differences, Latitude difference=[39.74] degrees, Longitude difference=[105.18] degrees.
-   **   ~~~   ** ..Time Zone difference=[7.0] hour(s), Elevation difference=[182900.00] percent, [1829.00] meters.
+   **   ~~~   ** ..Weather File Location=PARIS_ ORLY - FRA IWEC Data WMO#=071490
+   **   ~~~   ** ..due to location differences, Latitude difference=[48.73] degrees, Longitude difference=[2.40] degrees.
+   **   ~~~   ** ..Time Zone difference=[1.0] hour(s), Elevation difference=[9600.00] percent, [96.00] meters.
    ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS OFF DISCRETE", Blank Schedule Type Limits Name input -- will not be validated.
    ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS ON CONTINUOUS", Blank Schedule Type Limits Name input -- will not be validated.
    ** Warning ** ProcessScheduleInput: Schedule:Constant="ALWAYS OFF DISCRETE 1", Blank Schedule Type Limits Name input -- will not be validated.
@@ -23,6 +23,9 @@ Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2020.12.30 20:11,
    ************* All Return Air Paths passed integrity testing
    ************* No node connection errors were found.
    ************* Beginning Simulation
+   ** Warning ** Temperature out of range [-100. to 200.] (PsyPsatFnTemp)
+   **   ~~~   **  Routine=PsyTwbFnTdbWPb, Environment=RUN PERIOD 1, at Simulation time=02/14 17:30 - 17:40
+   **   ~~~   **  Input Temperature=-985.21
    ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-ELECTRICITY" has no energy cost. 
    **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
    ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-DISTILLATE OIL" has no energy cost. 
@@ -39,6 +42,16 @@ Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2020.12.30 20:11,
    ************* There are 117 unused day schedules in input.
    ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
    *************
+   ************* ===== Recurring Error Summary =====
+   ************* The following recurring error messages occurred.
+   *************
+   *************  ** Warning ** Temperature out of range [-100. to 200.] (PsyPsatFnTemp)
+   *************  **   ~~~   **   This error occurred 3 total times;
+   *************  **   ~~~   **   during Warmup 0 times;
+   *************  **   ~~~   **   during Sizing 0 times.
+   *************  **   ~~~   **   Max=-373.136902 C  Min=-985.219299 C
+   *************
+   *************
    ************* ===== Final Error Summary =====
    ************* The following error categories occurred.  Consider correcting or noting.
    ************* Nominally Unused Constructions
@@ -48,4 +61,4 @@ Program Version,EnergyPlus, Version 9.4.0-998c4b761e, YMD=2020.12.30 20:11,
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 13 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  5.91sec
+   ************* EnergyPlus Completed Successfully-- 16 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  2.19sec

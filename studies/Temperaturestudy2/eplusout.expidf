@@ -1,7 +1,7 @@
 !- Linux Line endings
 
 Version,
-    9.3;                      !- Version Identifier
+    9.4;                      !- Version Identifier
 
 SimulationControl,
     Yes,                      !- Do Zone Sizing Calculation
@@ -26,23 +26,23 @@ Timestep,
     6;                        !- Number of Timesteps per Hour
 
 SizingPeriod:DesignDay,
-    Denver Centennial Ann Htg 99.6% Condns DB,    !- Name
-    12,                       !- Month
+    PARIS_ ORLY Ann Htg 99.6% Condns DB,    !- Name
+    1,                        !- Month
     21,                       !- Day of Month
     WinterDesignDay,          !- Day Type
-    -18.8,                    !- Maximum DryBulb Temperature
+    -5.9,                     !- Maximum DryBulb Temperature
     0,                        !- Daily DryBulb Temperature Range
-    ,                         !- DryBulb Temperature Range Modifier Type
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
     ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
     Wetbulb,                  !- Humidity Condition Type
-    -18.8,                    !- Wetbulb or DewPoint at Maximum DryBulb
+    -5.9,                     !- Wetbulb or DewPoint at Maximum DryBulb
     ,                         !- Humidity Condition Day Schedule Name
     ,                         !- Humidity Ratio at Maximum DryBulb
     ,                         !- Enthalpy at Maximum DryBulb
     ,                         !- Daily WetBulb Temperature Range
-    81560,                    !- Barometric Pressure
-    3,                        !- Wind Speed
-    340,                      !- Wind Direction
+    100177,                   !- Barometric Pressure
+    3.3,                      !- Wind Speed
+    60,                       !- Wind Direction
     No,                       !- Rain Indicator
     No,                       !- Snow Indicator
     No,                       !- Daylight Saving Time Indicator
@@ -54,23 +54,23 @@ SizingPeriod:DesignDay,
     0;                        !- Sky Clearness
 
 SizingPeriod:DesignDay,
-    Denver Centennial Ann Clg 1% Condns DB=>MWB,    !- Name
-    7,                        !- Month
+    PARIS_ ORLY Ann Htg 99% Condns DB,    !- Name
+    1,                        !- Month
     21,                       !- Day of Month
-    SummerDesignDay,          !- Day Type
-    32,                       !- Maximum DryBulb Temperature
-    15.2,                     !- Daily DryBulb Temperature Range
-    ,                         !- DryBulb Temperature Range Modifier Type
+    WinterDesignDay,          !- Day Type
+    -3.8,                     !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
     ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
     Wetbulb,                  !- Humidity Condition Type
-    15.5,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    -3.8,                     !- Wetbulb or DewPoint at Maximum DryBulb
     ,                         !- Humidity Condition Day Schedule Name
     ,                         !- Humidity Ratio at Maximum DryBulb
     ,                         !- Enthalpy at Maximum DryBulb
     ,                         !- Daily WetBulb Temperature Range
-    81560,                    !- Barometric Pressure
-    4.9,                      !- Wind Speed
-    0,                        !- Wind Direction
+    100177,                   !- Barometric Pressure
+    3.3,                      !- Wind Speed
+    60,                       !- Wind Direction
     No,                       !- Rain Indicator
     No,                       !- Snow Indicator
     No,                       !- Daylight Saving Time Indicator
@@ -79,7 +79,443 @@ SizingPeriod:DesignDay,
     ,                         !- Diffuse Solar Day Schedule Name
     ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
     ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
-    1;                        !- Sky Clearness
+    0;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Hum_n 99.6% Condns DP=>MCDB,    !- Name
+    1,                        !- Month
+    21,                       !- Day of Month
+    WinterDesignDay,          !- Day Type
+    -4.2,                     !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Dewpoint,                 !- Humidity Condition Type
+    -10.8,                    !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.3,                      !- Wind Speed
+    60,                       !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    0;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Hum_n 99% Condns DP=>MCDB,    !- Name
+    1,                        !- Month
+    21,                       !- Day of Month
+    WinterDesignDay,          !- Day Type
+    -2,                       !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Dewpoint,                 !- Humidity Condition Type
+    -7.9,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.3,                      !- Wind Speed
+    60,                       !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    0;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Htg Wind 99.6% Condns WS=>MCDB,    !- Name
+    1,                        !- Month
+    21,                       !- Day of Month
+    WinterDesignDay,          !- Day Type
+    9.5,                      !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    9.5,                      !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    14.9,                     !- Wind Speed
+    60,                       !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    0;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Htg Wind 99% Condns WS=>MCDB,    !- Name
+    1,                        !- Month
+    21,                       !- Day of Month
+    WinterDesignDay,          !- Day Type
+    9,                        !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    9,                        !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    12.9,                     !- Wind Speed
+    60,                       !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    0;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg .4% Condns DB=>MWB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    30.9,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    20.1,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 1% Condns DB=>MWB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    28.9,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    19.5,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 2% Condns DB=>MWB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    27,                       !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    18.7,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg .4% Condns WB=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    28.3,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    21.4,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 1% Condns WB=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    26.7,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    20.5,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 2% Condns WB=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    25.3,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    19.6,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg .4% Condns DP=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    23.8,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Dewpoint,                 !- Humidity Condition Type
+    19.2,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 1% Condns DP=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    22.9,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Dewpoint,                 !- Humidity Condition Type
+    18.2,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 2% Condns DP=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    22.2,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Dewpoint,                 !- Humidity Condition Type
+    17.3,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg .4% Condns Enth=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    28.4,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Enthalpy,                 !- Humidity Condition Type
+    ,                         !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    62600,                    !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 1% Condns Enth=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    26.9,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Enthalpy,                 !- Humidity Condition Type
+    ,                         !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    59200,                    !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+
+SizingPeriod:DesignDay,
+    PARIS_ ORLY Ann Clg 2% Condns Enth=>MDB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    25.2,                     !- Maximum DryBulb Temperature
+    10.1,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Enthalpy,                 !- Humidity Condition Type
+    ,                         !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    56100,                    !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    100177,                   !- Barometric Pressure
+    3.6,                      !- Wind Speed
+    100,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAETau,                !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    0.492,                    !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    1.841;                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
 
 RunPeriod,
     Run Period 1,             !- Name
@@ -95,6 +531,10 @@ RunPeriod,
     No,                       !- Apply Weekend Holiday Rule
     Yes,                      !- Use Weather File Rain Indicators
     Yes;                      !- Use Weather File Snow Indicators
+
+RunPeriodControl:DaylightSavingTime,
+    Last Sunday in March,     !- Start Date
+    Last Sunday in October;    !- End Date
 
 ScheduleTypeLimits,
     ActivityLevel,            !- Name
