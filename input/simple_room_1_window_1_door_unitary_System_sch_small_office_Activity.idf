@@ -3838,7 +3838,7 @@ ZoneInfiltration:DesignFlowRate,
 
 HVACTemplate:Thermostat,
     thermostat 1,            !- Name
-    Small Office Activity,   !- Heating Setpoint Schedule Name
+    Small Office Bldg Equip, !- Heating Setpoint Schedule Name
     15,                      !- Constant Heating Setpoint {C}
     ,                        !- Cooling Setpoint Schedule Name
     25;                      !- Constant Cooling Setpoint {C}
