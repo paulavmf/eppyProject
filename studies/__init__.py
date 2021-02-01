@@ -21,4 +21,5 @@ def run_study(idf, objs_to_delete, vars_name, scriptname,filename = os.getcwd())
     idf.saveas(abs_newdir + '/idffile.idf')
     idf.run(output_directory=abs_newdir)
     copyfile(os.path.dirname(__file__) + '/ReadVarsESO', abs_newdir+'/ReadVarsESO')
+    #TODO el misterio de permisos... no se...
     os.system(abs_newdir+'/ReadVarsESO')

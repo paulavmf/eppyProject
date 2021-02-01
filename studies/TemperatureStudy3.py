@@ -1,6 +1,16 @@
-from helpers import *
+from helpers.idf_helpers import *
 from studies import run_study
 # SIMPLE ROOM with people and no AIR CONDITIONER,
+'''
+__TemperatureStudy3__:
+
+- PEOPLE: SÍ
+- LIGHTS: NO
+- ELECTRICEQUIPMENT: NO
+- AIRCONDITIONER: NO
+              
+              '''
+
 
 def main():
     idffile = '/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/input/simple_room_1_window_1_door.idf'
