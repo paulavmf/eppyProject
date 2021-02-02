@@ -3874,7 +3874,7 @@ HVACTemplate:Zone:Unitary,
 
 HVACTemplate:System:Unitary,
     system 1,                !- Name
-    Always On Continuous,    !- System Availability Schedule Name
+    Small Office Bldg Equip, !- System Availability Schedule Name
     Thermal Zone 1,          !- Control Zone or Thermostat Location Name
     autosize,                !- Supply Fan Maximum Flow Rate {m3/s}
     ,                        !- Supply Fan Operating Mode Schedule Name
