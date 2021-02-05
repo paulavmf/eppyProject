@@ -7,6 +7,25 @@ from studies import run_study
 - ELECTRICEQUIPMENT: SÍ
 - AIRCONDITIONER: SÍ
   - DATOS:
+            key 	HVACTemplate:Thermostat
+            Name 	thermostat 1
+            Heating_Setpoint_Schedule_Name 	Small Office Bldg Equip
+            Constant_Heating_Setpoint 	15
+            Cooling_Setpoint_Schedule_Name 	
+            Constant_Cooling_Setpoint 	25
+            --------------------------------
+            key 	HVACTemplate:Zone:Unitary
+            Zone_Name 	Thermal Zone 1
+            Template_Unitary_System_Name 	system 1
+            Template_Thermostat_Name 	thermostat 1
+            Supply_Air_Maximum_Flow_Rate 	autosize
+            (...)
+            --------------------------------
+            key 	HVACTemplate:System:Unitary
+            Name 	system 1
+            System_Availability_Schedule_Name 	Small Office Bldg Equip
+            Control_Zone_or_Thermostat_Location_Name 	Thermal Zone 1
+            Supply_Fan_Maximum_Flow_Rate 	autosize
 
 
 '''
