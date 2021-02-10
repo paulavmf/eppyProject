@@ -24,3 +24,7 @@ studies/__pycache__/
 .idea/
 
 helpers/__pycache__/
+
+studies/Variable Comparisson/
+
+notebooks/.ipynb_checkpoints/
