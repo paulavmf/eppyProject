@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from helpers.idf_helpers import *
 
 '''
 period  = [ 'init' , 'end']
@@ -36,3 +37,26 @@ def merge_transform_ts(p, env_data, data_list, titles):
         newdata = newdata.merge(data, on = 'Date/Time')
     newdata = newdata.merge(env_data,  on = 'Date/Time')
     return (newdata)
+
+def schedule_to_ts(idf, schedules_name):
+    import os
+    from shutil import copyfile
+    for obj in idf.idfobjects['OUTPUT:VARIABLE']:
+        idf.removeidfobject(obj)
+    for schedule_name in schedules_name:
+        idf.newidfobject('OUTPUT:VARIABLE')
+        idf.idfobjects['OUTPUT:VARIABLE'][-1].Key_Value = schedule_name
+        idf.idfobjects['OUTPUT:VARIABLE'][-1].Variable_Name = 'Schedule Value'
+    # TODO ESTO NO FUNCIONA
+    try:
+        os.mkdir('tmp')
+    except FileExistsError:
+        print("Directory already exists")
+
+    print(idf.idfobjects['OUTPUT:VARIABLE'])
+    idf.saveas('tmp/idf')
+    copyfile('/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/studies/ReadVarsESO','tmp/ReadVarsESO')
+    os.system('tmp/ReadVarsESO')
+    data = eso_to_ts('tmp/eplusout.csv')
+    return(data)
+
