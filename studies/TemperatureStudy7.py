@@ -40,7 +40,7 @@ def main():
     objs_to_delete = []
     vars_name = ['Site Outdoor Air Drybulb Temperature','Zone Air Temperature']
 
-    run_study(idf, objs_to_delete, vars_name, os.path.basename(__file__))
+    run_study(idf, objs_to_delete, vars_name, scriptname=os.path.basename(__file__))
 
 
 
