@@ -4,10 +4,10 @@ from studies import run_study
 '''
 __TemperatureStudy4__:
 
-- PEOPLE: SÍ
+- PEOPLE: YES
 - LIGHTS: NO
 - ELECTRICEQUIPMENT: NO
-- AIRCONDITIONER: SÍ
+- AIRCONDITIONER: YES
   - DATOS:
               key 	HVACTemplate:Thermostat
               Name 	thermostat 1

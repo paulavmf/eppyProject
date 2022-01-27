@@ -5,9 +5,9 @@ from studies import run_study
 '''
 __TemperatureStudy3__:
 
-- PEOPLE: SÍ
-- LIGHTS: SÍ
-- ELECTRICEQUIPMENT: SÍ
+- PEOPLE: YES
+- LIGHTS: YES
+- ELECTRICEQUIPMENT: YES
 - AIRCONDITIONER: NO
 
               '''

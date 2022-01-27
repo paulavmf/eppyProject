@@ -2,10 +2,10 @@ from helpers.idf_helpers import *
 from studies import run_study
 
 '''
-- PEOPLE: SÍ
-- LIGHTS: SÍ
-- ELECTRICEQUIPMENT: SÍ
-- AIRCONDITIONER: SÍ
+- PEOPLE: YES
+- LIGHTS: YES
+- ELECTRICEQUIPMENT: YES
+- AIRCONDITIONER: YES
   - DATOS:
             key 	HVACTemplate:Thermostat
             Name 	thermostat 1

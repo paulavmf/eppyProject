@@ -35,8 +35,12 @@ tmp/
 
 studies/TemperatureStudy7/
 
-variable_study/
+studies/variable_study/
 
-variable_study_outside/
+studies/variable_study_outside/
 
-variable_study_CHICAGO/
+studies/variable_study_CHICAGO/
+
+DataExhangeStudies/TestDataTransfer_with_notes.py
+
+studies/.ipynb_checkpoints/

@@ -8,7 +8,7 @@ __TemperatureStudy2__:
 - PEOPLE: NO
 - LIGHTS: NO
 - ELECTRICEQUIPMENT: NO
-- AIRCONDITIONER: SÍ
+- AIRCONDITIONER: YES
   - DATOS:
               key 	HVACTemplate:Thermostat
               Name 	thermostat 1
@@ -36,7 +36,7 @@ __TemperatureStudy2__:
 def main():
     idffile = '/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/input/simple_room_1_window_1_door_unitary_System_sch_constant.idf'
     iddfile = '/usr/local/EnergyPlus-9-4-0/Energy+.idd'
-    epwfile = '/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/input/Wheather file/FRA_Paris.Orly.071490_IWEC.epw'
+    epwfile = '/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/input/wheather_file/FRA_Paris.Orly.071490_IWEC.epw'
 
     idf = initialization(idffile,iddfile,epwfile)
     objs_to_delete = ['PEOPLE','ELECTRICEQUIPMENT']

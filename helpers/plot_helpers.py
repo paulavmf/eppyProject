@@ -47,7 +47,7 @@ def schedule_to_ts(idf, schedules_name):
         idf.newidfobject('OUTPUT:VARIABLE')
         idf.idfobjects['OUTPUT:VARIABLE'][-1].Key_Value = schedule_name
         idf.idfobjects['OUTPUT:VARIABLE'][-1].Variable_Name = 'Schedule Value'
-    # TODO ESTO NO FUNCIONA
+    # TODO THIS DOES NOT WORK
     try:
         os.mkdir('tmp')
     except FileExistsError:

@@ -32,9 +32,9 @@ from studies import run_study
 
 
 def main():
-    idffile = '/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/input/simple_room_1_window_1_door_unitary_System_sch_small_office_Activity_ nothermostat.idf'
+    idffile = '/home/paula/Documentos/Doctorado/Desarrollo/EPProject/input/simple_room_1_window_1_door_unitary_System_sch_small_office_Activity_ nothermostat.idf'
     iddfile = '/usr/local/EnergyPlus-9-4-0/Energy+.idd'
-    epwfile = '/home/paula/Documentos/Doctorado/Desarrollo/eppyProject/input/Wheather file/FRA_Paris.Orly.071490_IWEC.epw'
+    epwfile = '/home/paula/Documentos/Doctorado/Desarrollo/EPProject/input/Wheather_file/FRA_Paris.Orly.071490_IWEC.epw'
 
     idf = initialization(idffile,iddfile,epwfile)
     objs_to_delete = []

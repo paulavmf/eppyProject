@@ -42,4 +42,4 @@ def run_study(idf, objs_to_delete, vars_name, scriptname=None,new_folder_path = 
         cmd = "cd"+ abs_newdir
         subprocess.run(["cd"+ abs_newdir])
         subprocess.run(["./ReadVarsESO"])
-        #TODO el misterio de permisos... no se...
+        #TODO permissions handler
